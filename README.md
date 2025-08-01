@@ -1,6 +1,6 @@
 # 🌙 Dream Visualizer
 
-Welcome to **Dream Visualizer** — a creative app that transforms your dream descriptions into beautiful, surreal images inspired by Studio Ghibli’s magical art style.
+**Dream Visualizer** is a Gradio-based AI application that transforms free-text dream descriptions into imaginative visual scenes. It works by converting your dream into a visual prompt and then generating an image using a hosted text-to-image model API.
 
 ---
 
@@ -12,15 +12,20 @@ Behind the scenes, it combines prompt engineering with powerful AI image generat
 
 ---
 
-## How this project came to be
+## 🚀 How I Built It
 
-I started this project inspired by my fascination with dreams and AI art. The goal was to create a tool that turns abstract dream stories into vivid visuals. 
+This project started from a simple idea — what if we could *see* our dreams?
 
-The core components include:
+1. **Initial Approach**  
+   I began with symbolic interpretation, trying to analyze dreams by mapping them to symbols and meanings. However, the results were inconsistent and hard to visualize.
 
-- **Dream-to-visual prompt conversion:** A custom function that extracts key themes from your dream text and crafts detailed image prompts.
-- **Image generation model:** Initially tested with OpenAI’s models, but currently runs best with GPU-accelerated Hugging Face Diffusers models (like Stable Diffusion).
-- **UI:** Built using Gradio for quick iterations and user-friendly interaction.
+2. **Simplified and Improved**  
+   I pivoted to a direct visual storytelling approach: turning dream text into scene descriptions using keyword matching and fantasy-style prompts. This produced better and more reliable results.
+
+3. **Image Generation**  
+   After experimenting with local and cloud-hosted models, I used Hugging Face’s `stabilityai/stable-diffusion-2` as the default model. The model works best on GPU and supports Ghibli-style rendering.
+
+4. **UI:** Built using Gradio for quick iterations and user-friendly interaction.
 
 This project is a blend of creativity, prompt engineering, and AI technology.
 
@@ -33,9 +38,21 @@ This project is a blend of creativity, prompt engineering, and AI technology.
 - 🖼️ View recent dream prompts and images in the session  
 - 🎲 Use example dreams to test instantly  
 - 🚀 Fast generation with GPU acceleration
+- 🌐 Deployed as a Gradio web app
 
 ---
 
+## 🛠 Tech Stack
+
+- Python 🐍
+- Gradio UI 🎨
+- Hugging Face Spaces 🚀
+- PIL (Pillow) for image handling
+- Tempfile for downloads
+- Stable Diffusion 2 (via Hugging Face Inference API)
+
+---
+  
 ## Current Limitations & Notes
 
 - **Image download functionality is a work-in-progress** — I’m actively working on making image downloads seamless and reliable.
@@ -66,18 +83,18 @@ This project is a blend of creativity, prompt engineering, and AI technology.
 ## Live Demo
 
 Try it online at:  
-[https://huggingface.co/spaces/your-username/dream-visualizer](https://huggingface.co/spaces/your-username/dream-visualizer)
+[https://huggingface.co/spaces/sree-02/dream-visualizer](https://huggingface.co/spaces/your-username/dream-visualizer)
+⚠️ **Note:** The Hugging Face app may not work as expected on CPU-only hardware. For the best experience, run the app with a GPU (e.g., T4) or clone and run locally with GPU enabled (e.g., Google Colab).
 
-*(Replace `your-username` with your actual Hugging Face username)*
 
 ---
 
 ## Future plans
 
-- Fix and polish the image download feature  
-- Add more artistic styles and themes  
-- Enhance prompt understanding and image quality  
-- Add user accounts and dream history saving  
+- Fix image download issues in the web version
+- Add better prompt engineering and support more artistic styles
+- Improve performance on CPU or deploy with GPU on Hugging Face
+- Add model selection or customization options for users
 - Mobile-friendly UI
 
 ---
